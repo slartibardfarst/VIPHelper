@@ -24,7 +24,8 @@ namespace WindowsFormsApplication1
             var favs = ReadFavouriteVipsFromAppConfig();
             foreach (var fav in favs)
             {
-                this.listView_FavouriteVips.Items.Add(new ListViewItem(new ListViewItem.ListViewSubItem[] {"Hello", "there"});
+                var lvi = new ListViewItem(new string[] {fav.Item1, fav.Item2});
+                this.listView_FavouriteVips.Items.Add(lvi);
             }
         }
 

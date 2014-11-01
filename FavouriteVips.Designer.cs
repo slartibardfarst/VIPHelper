@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
-            "vip_sds_parsing_forservices_80",
-            "Address Parser for PLC"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
-            "vip_sds_parsing_forconsumers_80",
-            "Address Parser for GeoWCF service"}, -1);
             this.listView_FavouriteVips = new System.Windows.Forms.ListView();
             this.vipNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.VipDescColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,9 +44,6 @@
             this.VipDescColumnHeader});
             this.listView_FavouriteVips.FullRowSelect = true;
             this.listView_FavouriteVips.GridLines = true;
-            this.listView_FavouriteVips.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
             this.listView_FavouriteVips.Location = new System.Drawing.Point(12, 12);
             this.listView_FavouriteVips.MultiSelect = false;
             this.listView_FavouriteVips.Name = "listView_FavouriteVips";

@@ -18,12 +18,12 @@ using Newtonsoft.Json.Linq;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class VipHelper : Form
     {
         private HttpClient _httpClient;
         private FavouriteVips _favouriteVipsForm;
 
-        public Form1()
+        public VipHelper()
         {
             InitializeComponent();
             _httpClient = new HttpClient();
@@ -159,16 +159,11 @@ namespace WindowsFormsApplication1
             comboBoxVipServiceNames.Update();
         }
 
-        private void myFavouriteVIPsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var favs = new FavouriteVips();
-            favs.ShowDialog();
-        }
 
         private void favouritesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var favs = new FavouriteVips();
-            favs.ShowDialog();
+            if (null != _favouriteVipsForm)
+                _favouriteVipsForm.ShowDialog();
         }
     }
 }

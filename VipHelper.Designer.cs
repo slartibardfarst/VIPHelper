@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    partial class Form1
+    partial class VipHelper
     {
         /// <summary>
         /// Required designer variable.

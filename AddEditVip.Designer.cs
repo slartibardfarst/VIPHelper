@@ -51,6 +51,7 @@
             this.textBox_VipName.Name = "textBox_VipName";
             this.textBox_VipName.Size = new System.Drawing.Size(307, 20);
             this.textBox_VipName.TabIndex = 1;
+            this.textBox_VipName.TextChanged += new System.EventHandler(this.textBox_VipName_TextChanged);
             // 
             // label2
             // 
@@ -67,6 +68,7 @@
             this.textBox_VipComments.Name = "textBox_VipComments";
             this.textBox_VipComments.Size = new System.Drawing.Size(307, 20);
             this.textBox_VipComments.TabIndex = 1;
+            this.textBox_VipComments.TextChanged += new System.EventHandler(this.textBox_VipComments_TextChanged);
             // 
             // buttonCancel
             // 
@@ -103,6 +105,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AddEditVip";
             this.Text = "Add/Edit VIP";
+            this.Shown += new System.EventHandler(this.AddEditVip_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

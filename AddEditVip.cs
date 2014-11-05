@@ -13,17 +13,9 @@ namespace WindowsFormsApplication1
 {
     public partial class AddEditVip : Form
     {
-        public string VipName
-        {
-            get { return this.textBox_VipName.Text; }
-            set { this.textBox_VipName.Text = value; }
-        }
-
-        public string VipComments
-        {
-            get { return this.textBox_VipComments.Text; }
-            set { this.textBox_VipComments.Text = value; }
-        }
+        public string VipName { get; set; }
+        public string VipComments { get; set; }
+        public bool EditedByUser { get; set; }
 
         public AddEditVip()
         {
@@ -32,6 +24,12 @@ namespace WindowsFormsApplication1
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
+            if (EditedByUser)
+            {
+                VipName = textBox_VipName.Text;
+                VipComments = textBox_VipComments.Text;
+            }
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -40,6 +38,23 @@ namespace WindowsFormsApplication1
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void textBox_VipName_TextChanged(object sender, EventArgs e)
+        {
+            EditedByUser = true;
+        }
+
+        private void textBox_VipComments_TextChanged(object sender, EventArgs e)
+        {
+            EditedByUser = true;
+        }
+
+        private void AddEditVip_Shown(object sender, EventArgs e)
+        {
+            EditedByUser = false;
+            textBox_VipName.Text = VipName;
+            textBox_VipComments.Text = VipComments;
         }
     }
 }

@@ -83,7 +83,12 @@ namespace WindowsFormsApplication1
             int i = listView_FavouriteVips.SelectedIndices[0];
             editVip.VipName = listView_FavouriteVips.Items[i].Text;
             editVip.VipComments = listView_FavouriteVips.Items[i].SubItems[1].Text;
-            DialogResult res = editVip.ShowDialog();
+            if (DialogResult.OK == editVip.ShowDialog() && editVip.EditedByUser)
+            {
+                listView_FavouriteVips.Items[i].Text = editVip.VipName;
+                listView_FavouriteVips.Items[i].SubItems[1].Text = editVip.VipComments;
+                WriteFavouriteVipsToConfig()
+            }
         }
 
         private void buttonDeleteVIP_Click(object sender, EventArgs e)

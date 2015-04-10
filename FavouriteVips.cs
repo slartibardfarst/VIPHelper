@@ -87,13 +87,15 @@ namespace WindowsFormsApplication1
             {
                 listView_FavouriteVips.Items[i].Text = editVip.VipName;
                 listView_FavouriteVips.Items[i].SubItems[1].Text = editVip.VipComments;
-                WriteFavouriteVipsToConfig()
+                WriteFavouriteVipsToConfig();
             }
         }
 
         private void buttonDeleteVIP_Click(object sender, EventArgs e)
         {
-
+            int i = listView_FavouriteVips.SelectedIndices[0];
+            listView_FavouriteVips.Items.RemoveAt(i);
+            WriteFavouriteVipsToConfig();
         }
 
         private void listView_FavouriteVips_SelectedIndexChanged(object sender, EventArgs e)
